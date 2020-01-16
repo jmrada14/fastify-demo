@@ -9,7 +9,7 @@ const routes = [
 },
     {
         method: 'GET',
-        url: '/api/todos/:author',
+        url: '/api/todos/author/:author',
         handler: todoController.getTodoByAuthor
     },
     {

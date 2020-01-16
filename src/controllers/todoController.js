@@ -19,7 +19,7 @@ try {
 exports.getTodoByAuthor = async (req, res) => {
   try{
       const author = req.params.author;
-      const todo = await Todo.findById(author)
+      const todo = await Todo.find({author: author})
       return todo
   }catch (err) {
       throw boom.boomify(err)
