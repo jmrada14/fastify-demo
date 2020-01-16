@@ -15,8 +15,7 @@ const routes = [
     {
         method: 'POST',
         url: '/api/todos',
-        handler: todoController.addTodo,
-        schema: documentation.addTodoSchema
+        handler: todoController.addTodo
     },
     {
         method: 'PUT',

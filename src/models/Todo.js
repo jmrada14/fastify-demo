@@ -12,6 +12,6 @@ const todo = new Schema({
     priority: Number
 });
 
-const Todo = mongoose.model("Car", todo);
+const Todo = mongoose.model("Todo", todo);
 // EXPORT
 module.exports = Todo;
