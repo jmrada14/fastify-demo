@@ -20,8 +20,43 @@ exports.getTodoByAuthor = async (req, res) => {
   try{
       const author = req.params.author;
       const todo = await Todo.findById(author)
-
+      return todo
   }catch (err) {
       throw boom.boomify(err)
+  }
+};
+
+// ADD NEW TODO
+
+exports.addTodo = async (req, res) => {
+  try {
+   const todo = new Todo(req.body)
+   return todo.save()
+  }catch (err) {
+      throw boom.boomify(err);
+  }
+};
+
+// UPDATE TODO
+
+exports.updateTodo = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const todo = req.body;
+        const { ...updateData } = todo
+        const update = await Todo.findByIdAndUpdate(id, updateData,{ new: true })
+        return update
+    }catch (err) {
+        throw boom.boomify(err);
+    }
+};
+
+exports.deleteTodo = async (req, res) => {
+  try{
+      const id = req.params.id;
+      const todo = await Todo.findByIdAndRemove(id);
+      return todo
+  }catch (err) {
+      boom.boomify(err);
   }
 };

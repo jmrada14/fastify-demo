@@ -5,8 +5,13 @@ const fastify = require("fastify")({logger: true});
 const mongoose = require("mongoose");
 
 // ROUTE
+const routes = require('../src/routes');
 fastify.get("/", async (req, res) =>{
-   return {hello: 'world'}
+   return {Welcome: 'HELLO USER, THIS IS MY FIRST API USING FASTIFY'}
+});
+
+routes.forEach((route, index) => {
+    fastify.route(route)
 });
 
 // DB
