@@ -6,9 +6,10 @@ export default {
         return axios.get("http://localhost:3001/api/todos");
     },
     saveTodo: function (data) {
-        return axios.post("http://localhost:3001/api/todos", data,  { headers: {
-            'Access-Control-Allow-Origin': '*'
-        }})
-    }
+        return axios.post("http://localhost:3001/api/todos", data)
+    },
+    deleteTodo: function(id) {
+        return axios.delete("/api/todos/" + id);
+    },
 
 }

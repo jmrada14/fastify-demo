@@ -47,6 +47,12 @@ class App extends React.Component{
             .catch(err => console.log(err));
     };
 
+    deleteTodo = id => {
+        API.deleteTodo(id)
+            .then(res => this.loadTodos())
+            .catch(err => console.log(err));
+    };
+
   render() {
       return (
           <div>
@@ -110,7 +116,7 @@ class App extends React.Component{
                                               Priority: {todo.priority}
                                           </strong>
                                       <br/>
-                                      <DeleteBtn/>
+                                      <DeleteBtn  onClick={() => this.deleteTodo(todo._id)}/>
                                   </ListItem>
                               ))}
                           </List>
