@@ -65,21 +65,18 @@ class App extends React.Component{
                           name="title"
                           placeholder="Title"
                       />
-                      <p>{this.state.title}</p>
                       <Input
                           value={this.state.author}
                           onChange={this.handleInputChange}
                           name="author"
                           placeholder="Author"
                       />
-                      <p>{this.state.author}</p>
                       <TextArea
                           value={this.state.text}
                           onChange={this.handleInputChange}
                           name="text"
                           placeholder="To-do description"
                       />
-                      <p>{this.state.text}</p>
                       <Input
                           type="date"
                           value={this.state.date}
@@ -87,7 +84,6 @@ class App extends React.Component{
                           name="date"
                           placeholder="Date"
                       />
-                      <p>{this.state.date}</p>
                       <Input
                           type="number"
                           value={this.state.priority}
@@ -95,7 +91,6 @@ class App extends React.Component{
                           name="priority"
                           placeholder="Priority"
                       />
-                      <p>{this.state.priority}</p>
                       <FormBtn
                           disabled={!(this.state.author && this.state.title)}
                           onClick={this.handleFormSubmit}
